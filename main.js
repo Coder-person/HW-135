@@ -1,13 +1,13 @@
 input = "";
-status = "";
+var status = "";
 
 function preload(){
 
 }
 
 function setup(){
-    canvas = createCanvas(400,500);
-    canvas.center();
+    canvas = createCanvas(400,400);
+    canvas.position(565,300);
     video = createVideo(VIDEO);
     video.hide();
 }
@@ -16,13 +16,13 @@ function draw(){
     image(video,0,0,400,500);
 }
 
+function modelLoaded(){
+    console.log('MODEL LOADED');
+    status = true;
+}
+
 function start(){
     objectDetector = ml5.objectDetector("cocossd",modelLoaded);
     document.getElementById("status").innerHTML = "Status: Detecting Object";
     input = document.getElementById("input").value;
-}
-
-function modelLoaded(){
-    console.log('MODEL LOADED');
-    status = true;
 }
