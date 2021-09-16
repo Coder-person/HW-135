@@ -8,12 +8,12 @@ function preload(){
 function setup(){
     canvas = createCanvas(400,400);
     canvas.position(565,300);
-    video = createVideo(VIDEO);
+    video = createCapture(VIDEO);
     video.hide();
 }
 
 function draw(){
-    image(video,0,0,400,500);
+    image(video,0,0,400,400);
 }
 
 function modelLoaded(){
